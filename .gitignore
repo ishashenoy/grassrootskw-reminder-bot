@@ -1,0 +1,7 @@
+.env
+credentials.json
+sent_reminders.json
+__pycache__/
+*.py[cod]
+.venv/
+venv/
