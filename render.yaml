@@ -1,0 +1,23 @@
+services:
+  - type: worker
+    name: grassrootskw-reminder-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.0"
+      - key: SPREADSHEET_NAME
+        value: Workplan
+      - key: REMINDER_HOUR
+        value: "9"
+      - key: REMINDER_MINUTE
+        value: "0"
+      - key: TIMEZONE
+        value: America/Toronto
+      - key: DAYS_BEFORE
+        value: "2"
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: GOOGLE_CREDENTIALS_JSON
+        sync: false

@@ -62,6 +62,9 @@ def parse_due_date(value: str) -> date | None:
 
 
 def get_sheets_client() -> gspread.Client:
+    credentials_json = os.getenv("GOOGLE_CREDENTIALS_JSON")
+    if credentials_json:
+        return gspread.service_account_from_dict(json.loads(credentials_json))
     return gspread.service_account(filename=CREDENTIALS_FILE)
 
 
